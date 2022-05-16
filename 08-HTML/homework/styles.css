@@ -1,0 +1,44 @@
+body {
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+}
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+}
+.divClass {
+    width: 950px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+h1 {
+    color:darkgreen;
+    width: 100%;
+    margin: auto;
+}
+a {
+    font-size: 18px;
+}
+ul, li {
+    list-style-type: none;
+}
+
+img {
+    width: 400px;
+    border-radius: 5px;
+}
+
+#thirdDiv {
+    width: 500px;
+    height: 600px;
+    background-color: aqua;
+    padding: 50px;
+    border: 2px solid;
+    border-radius: 3px;
+    margin: auto;
+    text-align: center;
+}
+#spanId {
+    font-size: 18px;
+}
