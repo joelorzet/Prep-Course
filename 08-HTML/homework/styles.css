@@ -1,6 +1,9 @@
 body {
     background-color: #f0f0f0;
     font-family: sans-serif;
+    background-image: url(/08-HTML/homework/assets/pexels-eberhard-grossgasteiger-1292115.jpg);
+    background-size: cover;
+    display: flex;
 }
 .container {
     margin: 0 auto;
@@ -22,6 +25,8 @@ a {
     font-size: 18px;
 }
 ul, li {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
@@ -33,9 +38,10 @@ img {
 #thirdDiv {
     width: 500px;
     height: 600px;
-    background-color: aqua;
+    background-color: rgb(118, 233, 168);
     padding: 50px;
-    border: 2px solid;
+    border: 2px solid rgb(42, 197, 119);
+    box-shadow: 10px 10px rgba(0,0,0,0.1);
     border-radius: 3px;
     margin: auto;
     text-align: center;
