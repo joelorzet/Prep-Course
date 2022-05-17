@@ -67,6 +67,25 @@ function buscoInterseccion(arreglo1, arreglo2) {
 	//Si no tienen elementos en común, retornar un arreglo vacío.
 	//Aclaración: los arreglos no necesariamente tienen la misma longitud
 	//Escribe tu código aquí
+
+	const newArray = [];
+
+	const arregloMayor = (arreglo1, arreglo2) => {
+		if (arreglo1.length > arreglo2.length) {
+			return arreglo1;
+		}
+		return arreglo2;
+	};
+
+	for (let i = 0; i < arregloMayor.length; i++) {
+		for (let j = 0; j < arregloMayor.length; j++) {
+			if (arreglo1[i] === arreglo2[j]) {
+				newArray.push(arreglo1[i]);
+			}
+		}
+	}
+
+	return newArray;
 }
 
 // No modificar nada debajo de esta línea

@@ -9,13 +9,14 @@ body {
 .divClass {
     width: 950px;
     margin: 0 auto;
-    align-items: center;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
 }
 
 h1 {
     color:darkgreen;
-    width: 100%;
-    margin: auto;
+    border-bottom:1px solid;
 }
 a {
     font-size: 18px;
@@ -39,6 +40,11 @@ img {
     margin: auto;
     text-align: center;
 }
+
+.span-container{
+    text-align: left;
+}
+
 #spanId {
     font-size: 18px;
 }
