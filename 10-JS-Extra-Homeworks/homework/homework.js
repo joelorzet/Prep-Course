@@ -25,6 +25,18 @@ function numberOfCharacters(string) {
 	//en formato par clave-valor.
 	//Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
 	//Escribe tu código aquí
+	let newObject = {};
+
+	for (let i = 0; i < string.length; i++) {
+		if (newObject.hasOwnProperty(string[i])) {
+			newObject[string[i]] += 1;
+		} else {
+			const string1 = string[i];
+
+			newObject[string1] = 1;
+		}
+	}
+	return newObject;
 }
 
 function capToFront(s) {
@@ -32,6 +44,20 @@ function capToFront(s) {
 	//al principio de la palabra.
 	//Ejemplo: soyHENRY -> HENRYsoy
 	//Escribe tu código aquí
+
+	let minWord = '';
+	let capWord = '';
+
+	for (let i = 0; i < s.length; i++) {
+		if (s[i].toUpperCase() === s[i]) {
+			capWord += s[i];
+		}
+		if (s[i].toLowerCase() === s[i]) {
+			minWord += s[i];
+		}
+	}
+
+	return capWord + minWord;
 }
 
 function asAmirror(str) {
@@ -40,6 +66,17 @@ function asAmirror(str) {
 	//pero con cada una de sus palabras invertidas, como si fuera un espejo.
 	//Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
 	//Escribe tu código aquí
+
+	const palabras = str.split(' ');
+	const newArray = palabras.map((elem) => {
+		return elem.split('').reverse().join('');
+	});
+
+	const newPalabras = newArray.reduce((acc, elem) => {
+		return acc + ' ' + elem;
+	});
+
+	return newPalabras;
 }
 
 function capicua(numero) {
@@ -47,12 +84,28 @@ function capicua(numero) {
 	//La misma debe retornar: "Es capicua" si el número se número que se lee igual de
 	//izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
 	//Escribe tu código aquí
+	const number = String(numero);
+	const reverseNumber = number.split('').reverse().join('');
+
+	if (reverseNumber === number) {
+		return 'Es capicua';
+	}
+	return 'No es capicua';
 }
 
 function deleteAbc(cadena) {
 	//Define una función que elimine las letras "a", "b" y "c" de la cadena dada
 	//y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
 	//Escribe tu código aquí
+	let newSentence = '';
+
+	for (let i = 0; i < cadena.length; i++) {
+		if (cadena[i] !== 'a' && cadena[i] !== 'b' && cadena[i] !== 'c') {
+			newSentence += cadena[i];
+		}
+	}
+
+	return newSentence;
 }
 
 function sortArray(arr) {
@@ -70,17 +123,10 @@ function buscoInterseccion(arreglo1, arreglo2) {
 
 	const newArray = [];
 
-	const arregloMayor = (arreglo1, arreglo2) => {
-		if (arreglo1.length > arreglo2.length) {
-			return arreglo1;
-		}
-		return arreglo2;
-	};
-
-	for (let i = 0; i < arregloMayor.length; i++) {
-		for (let j = 0; j < arregloMayor.length; j++) {
+	for (let i = 0; i < arreglo1.length; i++) {
+		for (let j = 0; j < arreglo2.length; j++) {
 			if (arreglo1[i] === arreglo2[j]) {
-				newArray.push(arreglo1[i]);
+				newArray.push(arreglo2[j]);
 			}
 		}
 	}

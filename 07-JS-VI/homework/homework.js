@@ -27,11 +27,9 @@ function sumarArray(numeros, cb) {
 	// No es necesario devolver nada
 	//Tu código:
 
-	let sumatoria = 0;
-
-	for (let i = 0; i < numeros.length; i++) {
-		sumatoria += numeros[i];
-	}
+	const sumatoria = numeros.reduce((acc, el) => {
+		return acc + el;
+	});
 
 	cb(sumatoria);
 }
@@ -41,7 +39,9 @@ function forEach(array, cb) {
 	// Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
 	//Tu código:
 
-	array.forEach(cb);
+	array.forEach((elem) => {
+		cb(elem);
+	});
 }
 
 function map(array, cb) {
@@ -50,7 +50,9 @@ function map(array, cb) {
 	// El nuevo array debe tener la misma longitud que el array del argumento
 	//Tu código:
 
-	const newArr = array.map(cb);
+	const newArr = array.map((elem) => {
+		return cb(elem);
+	});
 
 	return newArr;
 }
@@ -59,7 +61,9 @@ function filter(array) {
 	//Filtrar todos los elementos del array que comiencen con la letra "a".
 	//Devolver un nuevo array con los elementos que cumplen la condición
 	//Tu código:
-	const result = array.filter((el) => el.charAt(0) === 'a');
+	const result = array.filter((el) => {
+		return el[0] === 'a';
+	});
 
 	return result;
 }
